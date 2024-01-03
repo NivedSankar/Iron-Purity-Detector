@@ -1,0 +1,220 @@
+{% comment %} <!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body> 
+    
+        <!-- Centered form -->
+        <div class="container mt-5">
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2><b>Iron Purity Detection</h2></b>
+                    <form method="post" class="form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Iron Purity Detection</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+    body{
+        background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+    }
+    .contact-form{
+        background: #fff;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 185%%;
+        
+    }
+    .contact-form .form-control{
+        border-radius:1rem;
+    }
+    .contact-image{
+        text-align: center;
+    }
+    .contact-image img{
+        border-radius: 6rem;
+        width: 11%;
+        margin-top: -3%;
+        transform: rotate(29deg);
+    }
+    .contact-form form{
+        padding: 14%;
+    }
+    .contact-form form .row{
+        margin-bottom: -7%;
+    }
+    .contact-form h3{
+        margin-bottom: 8%;
+        margin-top: -10%;
+        text-align: center;
+        color: #0062cc;
+    }
+    .contact-form h5{
+        color: #0062cc;
+    }
+    .contact-form .btnContact {
+        width: 50%;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.5%;
+        background: #dc3545;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+    }
+    .btnContactSubmit
+    {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        color: #fff;
+        background-color: #0062cc;
+        border: none;
+        cursor: pointer;
+    }
+    .container {
+        max-width: 50000px;
+    }
+</style>
+<body> 
+    
+    <!-- Centered form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="container contact-form">
+                    <form method="post" class="form">
+                        {% csrf_token %}
+                        <b><h3>Iron Purity Detection</h3></b>
+                        <br>
+                        <h5>Feed in %</h5><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>% Iron Feed </label>{{ form.iron_feed}}
+                                </div>
+                                {% comment %} <div class="form-group">
+                                    <label>Starch Flow </label>{{ form.starch_flow}}
+                                </div> {% endcomment %}
+                            </div>
+                            <div class="col-md-6 em-5">
+                                <div class="form-group">
+                                    <label>% Silica Feed </label>{{ form.silica_feed}}
+                                </div>
+                                {% comment %} <div class="form-group">
+                                    <label>Amina Flow </label>{{ form.amina_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Ore Pulp Flow </label>{{ form.ore_pulp_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label> Ore Pulp Density</label>{{ form.ore_pulp_density}}
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <h5>Flow and Density</h5><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Starch Flow </label>{{ form.starch_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Amina Flow </label>{{ form.amina_flow}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Ore Pulp Flow </label>{{ form.ore_pulp_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Ore Pulp Density</label>{{ form.ore_pulp_density}}
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <br><br><br>
+                        <h5>Column Air Flow</h5><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Column 04 Air Flow</label>{{ form.column_04_air_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 05 Air Flow</label>{{ form.column_05_air_flow}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Column 06 Air Flow</label>{{ form.column_06_air_flow}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 07 Air Flow </label>{{ form.column_07_air_flow}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br><br>
+                        <h5>Column Levels</h5><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Column 01 Level</label>{{ form.column_01_level}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 02 Level</label>{{ form.column_02_level}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 03 Level</label>{{ form.column_03_level}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 04 Level </label>{{ form.column_04_level}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Column 05 Level</label>{{ form.column_05_level}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 06 Level</label>{{ form.column_06_level}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Column 07 Level</label>{{ form.column_07_level}}
+                                </div>
+                            </div>
+                        </div><br><br><br><br>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
